@@ -10,9 +10,8 @@
 type tupleChildren = [HTMLElement, number]
 type TypeChildren = Array<tupleChildren | HTMLElement>
 
-const useParallax = (el: HTMLElement, children: TypeChildren = []) => {
-  console.log(`useParallax....`)
-  const queue: any[] = [...children]
+const useParallax = (el: HTMLElement, children: Array<TypeChildren> = []) => {
+  const queue: Array<TypeChildren> = [...children]
 
   const parallx = (elem: HTMLElement, x: number, y: number, offset: number = 10) => {
     elem && (elem.style.transform = `translate(${x * offset / 0.5}px, ${ y * offset / 0.5}px)`);
@@ -28,7 +27,7 @@ const useParallax = (el: HTMLElement, children: TypeChildren = []) => {
     })
   }
 
-  const setParallax = (children: TypeChildren = []) => {
+  const setParallax = (children: Array<TypeChildren> = []) => {
     queue.push(...children)
   }
   
