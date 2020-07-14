@@ -4,7 +4,8 @@
     "bootstrap": "lerna bootstrap",
     "commit": "git add . && git-cz",
     "test": "node scripts/test.js",
-    "deploy": "sh scripts/deploy.sh"
+    "deploy": "sh scripts/deploy.sh",
+    "release": "sh scripts/release.sh"
   },
   "license": "MIT",
   "repository": {
