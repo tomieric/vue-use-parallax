@@ -1,5 +1,12 @@
 # vue-use-parallax
 
+<a href="https://travis-ci.org/tomieric/vue-use-parallax"><img alt="Travis (.org) branch" src="https://img.shields.io/travis/tomieric/vue-use-parallax/master.svg?logoColor=%23666666&style=flat-square"></a>
+<a href="https://unpkg.com/vue-use-parallax/dist/vue-use-parallax.esm-browser.js"><img src="https://img.badgesize.io/https://unpkg.com/vue-use-parallax/dist/vue-use-parallax.esm-browser.js?compression=gzip&style=flat-square" alt="Gzip Size" /></a>
+<a href="https://www.npmjs.com/package/vue-use-parallax"><img src="https://img.shields.io/npm/v/vue-use-parallax.svg?colorB=brightgreen&style=flat-square"></a>
+<a href="https://github.com/tomieric/vue-use-parallax/tree/master/tests/unit"><img src="https://img.shields.io/badge/tested_with-jest-99424f.svg?style=flat-square"></a>
+<a href="http://hits.dwyl.io/tomieric/vue-use-parallax" alt="hit count"><img src="http://hits.dwyl.io/tomieric/vue-use-parallax.svg" /></a>
+<a href="http://hits.dwyl.io/tomieric/vue-use-parallax" alt="downloads"><img src="https://img.shields.io/npm/tomieric/vue-use-parallax.svg?style=flat-square" /></a>
+
 视觉滚动差异是一种常用的用户交互方式，这里使用 vue hooks 去实现。同时支持 vue3 和 vue2，vue2 需要安装插件 `vue-composition-api`
 
 灵感来源于[Github挂了，它错误页的Parallax效果研究一下？](https://www.bilibili.com/video/BV1Lf4y1R779)
