@@ -33,10 +33,10 @@ yarn add vue-composition-api vue-use-parallax-v2
 <template>
   <div class="container">
     <div class="banner" ref="parallaxRef">
-      <div class="bg"></bg>
-      <div class="title">Title</div>
-      <div class="slogan">Slogan</div>
-      <div class="post"><img src="//img.domain.com/post.jpg" /></div>
+      <div class="bg" ref="bgRef"></bg>
+      <div class="title" ref="titleRef">Title</div>
+      <div class="slogan" ref="sloganRef">Slogan</div>
+      <div class="post" ref="postRef"><img src="//img.domain.com/post.jpg" /></div>
     </div>
   </div>
 </template>
