@@ -1,6 +1,6 @@
 {
   "name": "vue-use-parallax",
-  "version": "1.0.1-alpha.4+8fa6a7d",
+  "version": "1.0.1-alpha.1+50a5174",
   "description": "vue hooks for parallax",
   "main": "./dist/vue-use-parallax.global.js",
   "module": "./dist/vue-use-parallax.esm-bundler.js",
@@ -49,5 +49,5 @@
   "peerDependencies": {
     "vue": "^3.0.0-beta.20"
   },
-  "gitHead": "8fa6a7db15b81f64664cbfc12e9db120e2e4b6ff"
+  "gitHead": "50a5174a6eef21a907f65632ead30249f7cbedc4"
 }

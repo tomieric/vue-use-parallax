@@ -4,6 +4,9 @@
 
 灵感来源于[Github挂了，它错误页的Parallax效果研究一下？](https://www.bilibili.com/video/BV1Lf4y1R779)
 
+* [demo](https://tomieric.github.io/vue-use-parallax/)
+* [vue2 demo](https://tomieric.github.io/vue-use-parallax/vue2-demo/)
+
 ## 安装
 
 ### Yarn
