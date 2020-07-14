@@ -1,9 +1,9 @@
 {
-  "name": "vue-use-parallax-v2",
-  "version": "1.0.1-alpha.1+50a5174",
+  "name": "vue-use-parallax2",
+  "version": "1.0.1-alpha334",
   "description": "vue hooks for parallax",
-  "main": "./dist/vue-use-parallax-v2.global.js",
-  "module": "./dist/vue-use-parallax-v2.esm-bundler.js",
+  "main": "./dist/vue-use-parallax2.global.js",
+  "module": "./dist/vue-use-parallax2.esm-bundler.js",
   "types": "./src/index.ts",
   "files": [
     "src/index.js",
@@ -50,6 +50,5 @@
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-beta.3",
     "vue": "^2.6.11"
-  },
-  "gitHead": "50a5174a6eef21a907f65632ead30249f7cbedc4"
+  }
 }

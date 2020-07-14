@@ -13,9 +13,13 @@ npx lerna publish --canary --force-publish --yes --no-git-tag-version
 # build vue3-demo
 cd packages/vue3-demo
 
+yarn install
+
 yarn build
 
 # build vue3
 cd ../vue2-demo
+
+yarn install
 
 yarn build
