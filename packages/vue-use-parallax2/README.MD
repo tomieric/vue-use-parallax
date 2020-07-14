@@ -1,4 +1,4 @@
-# vue-use-parallax-v2
+# vue-use-parallax2
 
 ## 📄 License
 

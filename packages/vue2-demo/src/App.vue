@@ -17,7 +17,7 @@
   */
 
   import { onMounted, onUnmounted, ref } from '@vue/composition-api'
-  import useParallax from 'vue-use-parallax-v2'
+  import useParallax from 'vue-use-parallax2'
 
   export default {
     name: 'App',
@@ -62,7 +62,7 @@
 <script>
 import { onMounted, onUnmounted, ref } from '@vue/composition-api'
 // eslint-disable-next-line
-import useParallax from 'vue-use-parallax-v2'
+import useParallax from 'vue-use-parallax2'
 import pageHeader from './components/Header.vue'
 
 
