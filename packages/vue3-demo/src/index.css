@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,body {
+  height: 100%;
+  /* overflow: hidden; */
+  background: #f6f8fa;
+}
+#app {
+    height: 100%;
+   background: rgb(76, 252, 79);
+}
+#wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg,.text-a,.text-b,.text-c {
+  position: absolute;
+}
+
+.bg {
+  bottom: -30px;
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 600px;
+  background: url(https://replacecover.com/images/objects/thenight.png) no-repeat center 50px;
+  background-size: cover;
+}
+
+.text-a {
+  top: 50px;
+  left: calc(50% - 300px);
+  color: rgb(182, 70, 255);
+  font-size: 40px;
+}
+
+.text-b {
+  top: 40%;
+  left: calc(50% - 500px);
+  font-size: 80px;
+  font-weight: 500;
+}
+
+.text-c {
+  bottom: 60px;
+  left: calc(50% - 50px);
+  font-size: 24px;
+/*   color: #fff; */
+  background: yellow;
+  padding: 5px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.text-c:hover {
+  color: #fff;
+}
+
+.source {
+  margin: 50px auto;
+  width: 980px;
+  box-sizing: border-box;
+  padding: 40px;
+  background: #f1f8ff;
+  border: 1px solid #c8e1ff;
+  border-radius: 4px;
+}
