@@ -58,13 +58,12 @@ export default {
     const postRef = ref(null)
 
     onMounted(() => {
-      const { setParallax } = useParallax(parallaxRef.$el, [bgRef, [titleRef, 20]])
+      const { setParallax } = useParallax(parallaxRef.value, [bgRef.value, [titleRef.value, 20]])
 
-      setParallax(callback => {
-        // mousemove
-        callback(sloganRef, 30)
-        callback(postRef, -20)
-      })
+      setParallax([
+        [sloganRef.value, 30],
+        [postRef,value, -20]
+      ])
     })
 
     return {
