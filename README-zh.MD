@@ -51,8 +51,6 @@ yarn add vue-composition-api vue-use-parallax-v2
 <script>
 // Vue3
 import { ref, onMounted } from 'vue'
-// Vue2
-// import { ref, onMounted } from 'vue-composition-api'
 import useParallax from 'vue-use-parallax'
 
 export default {
@@ -65,11 +63,11 @@ export default {
     const postRef = ref(null)
 
     onMounted(() => {
-      const { setParallax } = useParallax(parallaxRef.value, [bgRef.value, [titleRef.value, 20]])
+      const { setParallax } = useParallax(parallaxRef, [bgRef, [titleRef, 20]])
 
       setParallax([
-        [sloganRef.value, 30],
-        [postRef,value, -20]
+        [sloganRef, 30],
+        [postRef, -20]
       ])
     })
 
@@ -79,6 +77,60 @@ export default {
       titleRef,
       sloganRef,
       postRef
+    }
+  }
+}
+</script>
+```
+
+### vue2 & composition-api
+
+```vue
+<template>
+  <div class="container">
+    <div class="banner" ref="parallaxRef">
+      <div class="bg" ref="bgRef"></bg>
+      <div class="title" ref="titleRef">Title</div>
+      <div class="slogan" ref="sloganRef">Slogan</div>
+      <div class="post" ref="postRef"><img src="//img.domain.com/post.jpg" /></div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { onMounted, onUnmounted, ref } from '@vue/composition-api'
+import useParallax from 'vue-use-parallax2'
+
+
+export default {
+  setup () {
+    const wrapperRef = ref(null)
+    const bgRef = ref(null)
+    const titleRef = ref(null)
+    const heroRef = ref(null)
+    const buttonRef = ref(null)
+
+    // onMounted
+    onMounted(() => {
+      const { setParallax, resetParallax } = useParallax(wrapperRef.value, [bgRef.value, [titleRef.value, 20]])
+
+      setParallax([
+        [heroRef.value, 50],
+        [buttonRef.value, -20]
+      ])
+      
+      // destoryed
+      onUnmounted(() => {
+        resetParallax()
+      })
+    })
+
+    return {
+      wrapperRef,
+      bgRef,
+      titleRef,
+      heroRef,
+      buttonRef
     }
   }
 }

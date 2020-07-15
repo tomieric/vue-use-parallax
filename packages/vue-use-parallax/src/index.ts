@@ -5,20 +5,20 @@
  * @param {(Array<[] | HTMLElement>)} Scrolling elements
  */
 
-import { onUnmounted } from 'vue'
+import { onMounted, onUnmounted, isRef, Ref } from 'vue'
 
-type tupleChildren = [HTMLElement, number]
-type TypeChildren = Array<tupleChildren | HTMLElement>
+type tupleChildren = [Ref<HTMLElement>, number]
+type TypeChildren = Array<tupleChildren | Ref<HTMLElement>>
 
-const useParallax = (el: HTMLElement, children: Array<TypeChildren> = []) => {
+const useParallax = (el: Ref<HTMLElement>, children: Array<TypeChildren> = []) => {
   const queue: Array<TypeChildren> = [...children]
 
-  const parallx = (elem: HTMLElement, x: number, y: number, offset: number = 10) => {
-    elem && (elem.style.transform = `translate(${x * offset / 0.5}px, ${ y * offset / 0.5}px)`);
+  const parallx = (elem: Ref<HTMLElement>, x: number, y: number, offset: number = 10) => {
+    elem && isRef(elem) && (elem.value.style.transform = `translate(${x * offset / 0.5}px, ${ y * offset / 0.5}px)`);
   }
 
   const publish = (offsetX: number, offsetY: number) => {
-    queue.forEach((children: any[] | HTMLElement) => {
+    queue.forEach((children: any[] | Ref<HTMLElement>) => {
       if (Array.isArray(children)) {
         parallx(children[0], offsetX, offsetY, children[1])
       } else {
@@ -32,21 +32,22 @@ const useParallax = (el: HTMLElement, children: Array<TypeChildren> = []) => {
   }
   
   const scrollParallax = (e: MouseEvent) => {
-    const offsetX: number = e.clientX / el.clientWidth
-    const offsetY: number = e.clientY / el.clientHeight
+    if (!isRef(el)) return
+    const offsetX: number = e.clientX / el.value.clientWidth
+    const offsetY: number = e.clientY / el.value.clientHeight
     requestAnimationFrame(() => publish(offsetX, offsetY))
   }
 
   // remove eventListener
-  const resetParallax = () => el && el.removeEventListener('mousemove', scrollParallax, false)
-  onUnmounted(resetParallax)
+  const resetParallax = () => el && isRef(el) && el.value.removeEventListener('mousemove', scrollParallax, false)
+  onUnmounted(() => resetParallax())
   
   // mousemove
   const startParallax = () => {
     resetParallax()
-    el && el.addEventListener('mousemove', scrollParallax,false)
+    el && isRef(el) && el.value.addEventListener('mousemove', scrollParallax,false)
   }
-  startParallax()
+  onMounted(() => startParallax())
 
   return {
     startParallax,

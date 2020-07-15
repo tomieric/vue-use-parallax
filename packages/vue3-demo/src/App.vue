@@ -31,11 +31,11 @@ export default {
     onMounted(() => {
       console.log(wrapperRef);
       
-      const { setParallax } = useParallax(wrapperRef.value, [bgRef.value, [titleRef.value, 20]])
+      const { setParallax } = useParallax(wrapperRef, [bgRef, [titleRef, 20]])
 
       setParallax([
-        [heroRef.value, 50],
-        [buttonRef.value, -20]
+        [heroRef, 50],
+        [buttonRef, -20]
       ])
     })
 
@@ -72,14 +72,12 @@ export default {
     const heroRef = ref(null)
     const buttonRef = ref(null)
 
-    onMounted(() => {
-      const { setParallax } = useParallax(wrapperRef.value, [bgRef.value, [titleRef.value, 20]])
+    const { setParallax } = useParallax(wrapperRef, [bgRef, [titleRef, 20]])
 
-      setParallax([
-        [heroRef.value, 50],
-        [buttonRef.value, -20]
-      ])
-    })
+    setParallax([
+      [heroRef, 50],
+      [buttonRef, -20]
+    ])
 
     return {
       wrapperRef,
