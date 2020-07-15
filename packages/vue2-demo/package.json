@@ -8,9 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@vue/composition-api": "^1.0.0",
+    "@vue/composition-api": "^1.0.0-beta.3",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-use-parallax2": "^1.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
