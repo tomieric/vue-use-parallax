@@ -50,7 +50,7 @@ yarn add vue-composition-api vue-use-parallax-v2
 
 <script>
 // Vue3
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import useParallax from 'vue-use-parallax'
 
 export default {
@@ -62,14 +62,12 @@ export default {
     const sloganRef = ref(null)
     const postRef = ref(null)
 
-    onMounted(() => {
-      const { setParallax } = useParallax(parallaxRef, [bgRef, [titleRef, 20]])
+    const { setParallax } = useParallax(parallaxRef, [bgRef, [titleRef, 20]])
 
-      setParallax([
-        [sloganRef, 30],
-        [postRef, -20]
-      ])
-    })
+    setParallax([
+      [sloganRef, 30],
+      [postRef, -20]
+    ])
 
     return {
       parallaxRef,

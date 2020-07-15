@@ -15,7 +15,7 @@
 *
 */
 
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import useParallax from 'vue-use-parallax'
 
 export default {
@@ -28,16 +28,12 @@ export default {
     const heroRef = ref(null)
     const buttonRef = ref(null)
 
-    onMounted(() => {
-      console.log(wrapperRef);
-      
-      const { setParallax } = useParallax(wrapperRef, [bgRef, [titleRef, 20]])
+    const { setParallax } = useParallax(wrapperRef, [bgRef, [titleRef, 20]])
 
-      setParallax([
-        [heroRef, 50],
-        [buttonRef, -20]
-      ])
-    })
+    setParallax([
+      [heroRef, 50],
+      [buttonRef, -20]
+    ])
 
     return {
       wrapperRef,
