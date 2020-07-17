@@ -7,6 +7,8 @@
 <a href="http://hits.dwyl.io/tomieric/vue-use-parallax" alt="hit count"><img src="http://hits.dwyl.io/tomieric/vue-use-parallax.svg" /></a>
 <a href="http://hits.dwyl.io/tomieric/vue-use-parallax" alt="downloads"><img src="https://img.shields.io/npm/tomieric/vue-use-parallax.svg?style=flat-square" /></a>
 
+[EN](./README.MD) | 中文
+
 视觉滚动差异是一种常用的用户交互方式，这里使用 vue hooks 去实现。同时支持 vue3 和 vue2，vue2 需要安装插件 `vue-composition-api`
 
 灵感来源于[Github挂了，它错误页的Parallax效果研究一下？](https://www.bilibili.com/video/BV1Lf4y1R779)
@@ -116,7 +118,7 @@ export default {
         [heroRef.value, 50],
         [buttonRef.value, -20]
       ])
-      
+
       // destoryed
       onUnmounted(() => {
         resetParallax()
@@ -134,6 +136,29 @@ export default {
 }
 </script>
 ```
+
+## 属性
+
+`useParallax(elRef: Ref<HTMLElement>, options: Array<[Ref<HTMLElement>, number] | Ref<HTMLElement>>)`
+
+* `elRef` 包裹元素 ref 对象
+* `options` 预设绑定移动的子元素及偏移值
+
+### hooks 获取到的行为状态
+
+```js
+  const { startParallax, setParallax, resetParallax } = useParallax(wrapperRef.value)
+```
+
+* `startParallax()` 注册开始监听鼠标移动视觉偏差，默认初始化调用。若手动 `resetParallax()` 后可手动启动监听。
+* `setParallax(options)` 添加新移动子元素配置
+* `resetParallax()` 禁用移动视觉效果
+
+### Options 配置
+
+接收一个数组，数组的每项可以为 dom 的 ref 对象，其默认偏移值是 10px，`eg. setParallax([bannerRef])`
+
+若需单独配置 dom 的偏移值则传入一个数组，其中第一项为 dom 的 ref 对象，第二项为偏移值的值，偏移方向相反则传入负数。 `eg. setParallax([bannerRef, [titleRef, 100], [descriptionRef, -50]])`
 
 ## 📄 License
 

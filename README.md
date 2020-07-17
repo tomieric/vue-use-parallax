@@ -7,6 +7,8 @@
 <a href="http://hits.dwyl.io/tomieric/vue-use-parallax" alt="hit count"><img src="http://hits.dwyl.io/tomieric/vue-use-parallax.svg" /></a>
 <a href="http://hits.dwyl.io/tomieric/vue-use-parallax" alt="downloads"><img src="https://img.shields.io/npm/tomieric/vue-use-parallax.svg?style=flat-square" /></a>
 
+EN | [中文](./README-zh.MD)
+
 The parallax are a common way for users to interact, implemented using Vue hooks. Support both `vue3` and `vue2`，You need to install plug-ins `vue-composition-api` in `vue2` 。
 
 inspired by[Github挂了，它错误页的Parallax效果研究一下？](https://www.bilibili.com/video/BV1Lf4y1R779)
@@ -134,6 +136,29 @@ export default {
 }
 </script>
 ```
+
+## Attributes
+
+`useParallax(elRef: Ref<HTMLElement>, options: Array<[Ref<HTMLElement>, number] | Ref<HTMLElement>>)`
+
+* `elRef` Wrap the ref object
+* `options` move child elements and offset values
+
+### Hooks gets the behavior state
+
+```js
+  const { startParallax, setParallax, resetParallax } = useParallax(wrapperRef.value)
+```
+
+* `startParallax()` Register to start listening for mouse movement visual biases. Default initialization calls. If manually 'resetParallax()' can be manually start monitoring.
+* `setParallax(options)` Add new move children
+* `resetParallax()` stop parallax event
+
+### Options
+
+Receive an array，Each item in the array can be a `ref object` in the DOM, with a default offset of 10px，`eg. setParallax([bannerRef])`
+
+If you want to configure the offset value of the DOM separately, you pass in an array where the first item is the REF object of the DOM, the second is the value of the offset value, and the reverse is the negative value. `eg. setParallax([bannerRef, [titleRef, 100], [descriptionRef, -50]])`
 
 ## 📄 License
 
